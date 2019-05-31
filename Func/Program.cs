@@ -13,6 +13,7 @@ namespace Func
         static void Main(string[] args)
         {   //Вычислить Y=F(X)
             double a, b, c, SumSolution=0;
+           
             int k = 1;
             Console.WriteLine("Введите начальное значение");
             a = Convert.ToDouble( Console.ReadLine());
@@ -28,28 +29,36 @@ namespace Func
 
             for (double i = a; i < b; i = i + c)
             {
-                
-                double solution, x=i;
-                solution = (x * x * x) - (1 / Math.Sqrt(3) - Math.Log10(1.37 * 1.37 * 1.37 + x * x * x * x * x) + 4 / x);
-                if (solution < 0)
+                bool skip = false;
+                if (i == 0)
                 {
-                    solution = solution * -1;
-                    Console.WriteLine($"{k++}: {solution}");
-                    SumSolution +=solution;
+                    skip = true;
+                    Console.WriteLine("X не может быть нулем");
                 }
-                else
+                if (skip == false)
                 {
-                    Console.WriteLine($"{k++}: {solution}");
-                    SumSolution +=solution;
+                    double solution, x = i;
+                    solution = (x * x * x) - (1 / Math.Sqrt(3) - Math.Log10(1.37 * 1.37 * 1.37 + x * x * x * x * x) + 4 / x);
+
+                    if (solution < 0)
+                    {
+                        solution = solution * -1;
+                        Console.WriteLine($"{k++}: {solution}");
+                        SumSolution += solution;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{k++}: {solution}");
+                        SumSolution += solution;
+                    }
                 }
-                
             }
             Console.WriteLine($"Сумма всех решений: {SumSolution}");
             Console.ReadLine();
            
 
             
-            }
+            
         }
     }
 }
