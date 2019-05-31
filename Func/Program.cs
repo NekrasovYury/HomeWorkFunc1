@@ -60,38 +60,48 @@ namespace Func
 
 
 
-            int startposx = 200;//Начало координат
-            int startposy = 200;
+            int startposx = 40;//Начало координат
+            int startposy = 2000;
            
             Console.Clear();
-            for (int i = 0; i < 200; i += 10)
+            for (int i = 0; i < 2000; i += 10)
             {
 
-                Console.SetCursorPosition((startposx + i) / 10, (startposy) / 10);
+               
+                Console.SetCursorPosition((startposx) , (startposy + i) / 10);
                 Console.Write("*");
-                Console.SetCursorPosition((startposx - i) / 10, (startposy) / 10);
-                Console.Write("*");
-                Console.SetCursorPosition((startposx) / 10, (startposy + i) / 10);
-                Console.Write("*");
-                Console.SetCursorPosition((startposx) / 10, (startposy - i) / 10);
+                Console.SetCursorPosition((startposx) , (startposy - i) / 10);
                 Console.Write("*");
             }
-            Console.SetCursorPosition((startposx + 200) / 10, (startposy) / 10);
-            Console.Write("200");
-            Console.SetCursorPosition((startposx) / 10, (startposy - 200) / 10);
-            Console.Write("200");
-            Console.SetCursorPosition((startposx - 200) / 10, (startposy) / 10);
-            Console.Write("-200");
-            Console.SetCursorPosition((startposx) / 10, (startposy + 200) / 10);
-            Console.Write("-200");
+
+            for (int i = 0; i < 20; i++)
+            {
+
+                Console.SetCursorPosition((startposx + i), (startposy) / 10);
+                Console.Write("*");
+                Console.SetCursorPosition((startposx - i) , (startposy) / 10);
+                Console.Write("*");
+            }
+
+            Console.SetCursorPosition((startposx + 20), (startposy) / 10);
+            Console.Write("20");
+            Console.SetCursorPosition((startposx), (startposy - 2000) / 10);
+            Console.Write("2000");
+            Console.SetCursorPosition((startposx - 20) , (startposy) / 10);
+            Console.Write("-20");
+            Console.SetCursorPosition((startposx), (startposy + 2000) / 10);
+            Console.Write("-2000");
             Console.ForegroundColor = ConsoleColor.Red;
 
+            int v = 0;
             for(double i = a; i < b; i = i + c)
             {
-                for (int j = 0; j < mass.Length; j++)
+                for (int j = v; j < mass.Length; j++)
                 {
-                    Console.SetCursorPosition((startposx + Convert.ToInt32(i)) / 10, (startposy - Convert.ToInt32(mass[j])) / 10); 
+                    v++;
+                    Console.SetCursorPosition((startposx + Convert.ToInt32(i)), (startposy - Convert.ToInt32(mass[j])) / 10); 
                     Console.Write("*");
+                    break;
                 }
             }
 
