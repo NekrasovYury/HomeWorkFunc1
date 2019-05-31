@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+
 
 namespace Func
 {
@@ -43,7 +45,11 @@ namespace Func
                 
             }
             Console.WriteLine($"Сумма всех решений: {SumSolution}");
+            Console.ReadLine();
+           
 
+            
+            }
         }
     }
 }
