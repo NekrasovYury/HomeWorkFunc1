@@ -90,7 +90,7 @@ namespace Func
             {
                 for (int j = 0; j < mass.Length; j++)
                 {
-                    Console.SetCursorPosition((startposx + Convert.ToInt32(i)) / 10, (startposy - Convert.ToInt32(mass[j])) / 10);
+                    Console.SetCursorPosition((startposx + Convert.ToInt32(i)) / 10, (startposy - Convert.ToInt32(mass[j])) / 10); 
                     Console.Write("*");
                 }
             }
